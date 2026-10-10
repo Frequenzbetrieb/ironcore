@@ -171,7 +171,7 @@ float Voice::damage (float x, int ch, const Frame& f)
     auto sat = [&] (float v)
     {
         if (f.sat <= 0.0f) return v;
-        const float g = 1.0f + f.sat * 10.0f, bias = f.sat * 0.3f;
+        const float g = 1.0f + f.sat * 4.0f, bias = f.sat * 0.3f; // moderate gain: keeps the oscillator character audible
         float y;
         switch (f.dtype)
         {
@@ -205,7 +205,7 @@ float Voice::damage (float x, int ch, const Frame& f)
             default: // Tube: asymmetric tanh
                 y = fastTanh (v * g + bias) - fastTanh (bias);
         }
-        return v + (y - v) * juce::jmin (1.0f, f.sat * 4.0f);
+        return v + (y - v) * juce::jmin (1.0f, f.sat * 1.6f); // blends in gradually instead of replacing the dry wave
     };
     auto fold = [&] (float v)
     {
@@ -222,6 +222,7 @@ float Voice::damage (float x, int ch, const Frame& f)
     const bool clean = f.sat <= 0.0f && f.fold <= 0.0f && f.clip <= 0.0f && f.crush <= 0.0f && f.preGain <= 1.001f;
     if (clean) return softLimit (x); // clean path: no shaping at all
 
+    const float dry = x;
     x *= f.preGain;
     switch (f.dorder)
     {
@@ -245,6 +246,10 @@ float Voice::damage (float x, int ch, const Frame& f)
         }
         x = crushHold[ch];
     }
+
+    // Parallel blend: keep part of the clean wave so the oscillator's character survives heavy distortion
+    // (pure series saturation turns every waveform into the same square)
+    x = x * 0.72f + dry * 0.45f;
 
     // DC blocker (asymmetric saturation creates offset)
     const float y = x - dcX[ch] + 0.995f * dcY[ch];
@@ -364,7 +369,7 @@ void Voice::updateControl (const Frame& frameIn, const Mods& m, float fe)
     cGl = 1.0f - std::exp (-twoPi * fc / (float) sr);
     cReso = juce::jmin (0.985f, f.reso + m.accent * f.accentAmt * 0.2f);
     cK = 2.0f - 2.0f * cReso;
-    cDrive = 1.0f + f.fdrive * 5.0f;
+    cDrive = 1.0f + f.fdrive * 2.5f;
     cGainStatic = (0.5f + 0.5f * velocity) * (1.0f + m.accent * f.accentAmt * 0.4f) * 0.22f * cAmpMod;
 }
 
@@ -425,9 +430,19 @@ void Voice::render (const Frame& frameIn, const Mods& m, float& outL, float& out
         phm -= std::floor (phm);
         const float mod = std::sin (twoPi * phm + f.fmfb * 2.6f * lastMod); // self-feedback -> harsher, saw-like modulator
         lastMod = mod;
-        const float fmS = std::sin (twoPi * ph1[0] + cIndex * mod);
-        sL += (fmS - coreL) * cFmMix;
-        sR += (fmS - coreR) * cFmMix;
+        // phase-modulate the SELECTED osc1 waveform (not a fixed sine), so TYPE/SHAPE stay audible in FM
+        float fmS;
+        if (sp1 || (f.oscType == otPD && f.o1wave < 0.02f))
+            fmS = std::sin (twoPi * ph1[0] + cIndex * mod);
+        else
+        {
+            float t = ph1[0] + cIndex * mod * 0.08f;
+            t -= std::floor (t);
+            fmS = shape (t, juce::jmin (0.45f, base * cUniRatio[0] * invSr), f.o1wave, f.oscType);
+        }
+        const float mixFm = cFmMix * 0.85f; // always keep some of the core oscillators
+        sL += (fmS - coreL) * mixFm;
+        sR += (fmS - coreR) * mixFm;
     }
 
     // --- Formant layer (screaming vowels) ---

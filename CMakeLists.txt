@@ -5,7 +5,7 @@ if(APPLE)
     set(CMAKE_OSX_DEPLOYMENT_TARGET "11.0" CACHE STRING "")
 endif()
 
-project(IRONCORE VERSION 0.8.0)
+project(IRONCORE VERSION 0.8.1)
 
 # Options
 option(IRONCORE_COPY_AFTER_BUILD "Install the plug-in into the user's plug-in folder after building" ON)

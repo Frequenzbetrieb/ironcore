@@ -202,7 +202,7 @@ const Preset presets[] {
     { "HARD TECHNO Stutter Machine",0.70f,0.55f,0.20f,0.70f,0.30f, 0.2f, 7, 0, false,0.1f,0.0f,1500,0.55f,0,0.55f,0.18f,0.5f,0.1f,0.3f,0.0f,0,1,8,0.8f,0.0f,0.00f,0.0f,0.20f, { { "cfxtype", 4 }, { "cfxp1", 0.3f }, { "cfxp2", 0.4f }, { "cfxmix", 1.0f } } },
     { "RAVE Phaser Lead",      0.20f,0.40f,0.10f,0.50f,0.70f, 0.0f, 7,  10,false,0.0f,0.0f,3500,0.30f,1,0.30f,0.30f,0.2f,0.0f,0.1f,0.0f,0,1,7,0.3f,0.0f,0.05f,0.0f,0.30f, { { "unimode", 1 }, { "cfxtype", 2 }, { "cfxp1", 0.35f }, { "cfxp2", 0.6f }, { "cfxmix", 0.7f } } },
     { "ACID Env3 Sweep",       0.40f,0.80f,0.00f,0.70f,0.00f, 0.0f, 0,  0, false,0.0f,0.0f, 500,0.85f,0,0.50f,0.20f,0.3f,0.0f,0.1f,0.0f,0,1,11,0.9f,0.0f,0.06f,0.0f,0.20f, { { "env3a", 2.0f }, { "env3s", 1.0f }, { "mmsrc2", 10 }, { "mmdst2", 0 }, { "mmamt2", 0.5f }, { "mmsrc3", 10 }, { "mmdst3", 5 }, { "mmamt3", 0.4f } } },
-    { "INIT Iron",             0.00f,0.40f,0.00f,0.50f,0.30f, 0.0f, 7,  8, false,0.0f,0.0f,1800,0.45f,0,0.50f,0.25f,0.3f,0.0f,0.1f,0.0f,0,1,7,0.6f,0.0f,0.03f,0.0f,0.25f },
+    { "INIT Iron",             0.00f,0.40f,0.00f,0.50f,0.30f, 0.0f, 7,  8, false,0.0f,0.0f,5000,0.25f,0,0.30f,0.25f,0.0f,0.0f,0.0f,0.0f,0,1,7,0.6f,0.0f,0.03f,0.0f,0.25f },
 };
 
 float presetTrimDb (const juce::String& name)

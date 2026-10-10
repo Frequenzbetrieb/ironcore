@@ -250,12 +250,12 @@ void IroncoreProcessor::buildFrame (double)
     f.cutoff = val ("cutoff") * std::exp2 (bite * 1.2f);
     f.reso = juce::jmin (0.98f, val ("reso") + bite * 0.35f);
     f.fmode = (int) val ("fmode");
-    f.fdrive = juce::jmin (1.0f, val ("fdrive") + heat * 0.6f);
+    f.fdrive = juce::jmin (1.0f, val ("fdrive") + heat * 0.35f);
     f.fenv = val ("fenv");
     f.fkey = val ("fkey");
 
-    f.preGain = 1.0f + heat * 3.0f;
-    f.sat = juce::jmin (1.0f, val ("sat") + heat * 0.7f);
+    f.preGain = 1.0f + heat * 1.2f;
+    f.sat = juce::jmin (1.0f, val ("sat") + heat * 0.45f);
     f.fold = juce::jmin (1.0f, val ("fold") + heat * heat * 0.4f);
     f.clip = juce::jmin (1.0f, val ("clip") + bite * 0.3f);
     f.crush = val ("crush");
