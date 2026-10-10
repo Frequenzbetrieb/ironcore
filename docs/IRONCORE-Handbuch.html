@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IRONCORE Handbuch</title>
+<style>
+  :root { --bg:#ffffff; --fg:#1b1d21; --muted:#5b6470; --hot:#d9480f; --panel:#f4f5f7; --edge:#dde1e6; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0f1012; --fg:#d8dde3; --muted:#9aa3ad; --hot:#ff5a1f; --panel:#1a1c20; --edge:#2c3036; } }
+  body { background:var(--bg); color:var(--fg); font:15px/1.6 -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; margin:0; }
+  main { max-width:860px; margin:0 auto; padding:32px 16px 64px; }
+  h1 { color:var(--hot); font-size:40px; letter-spacing:1px; margin:0; }
+  h1 + p { color:var(--muted); margin-top:4px; text-transform:uppercase; font-size:12px; letter-spacing:2px; }
+  h2 { border-bottom:2px solid var(--hot); padding-bottom:4px; margin-top:44px; }
+  h3 { margin-bottom:4px; }
+  table { border-collapse:collapse; width:100%; margin:12px 0; font-size:14px; }
+  th, td { text-align:left; padding:6px 10px; border-bottom:1px solid var(--edge); vertical-align:top; }
+  th { color:var(--muted); font-weight:600; }
+  code, kbd { background:var(--panel); border:1px solid var(--edge); border-radius:4px; padding:1px 5px; font-size:13px; }
+  .note { background:var(--panel); border-left:3px solid var(--hot); padding:10px 14px; border-radius:4px; }
+  nav ol { columns:2; padding-left:20px; }
+  @media (max-width:600px) { nav ol { columns:1; } table { font-size:13px; } }
+</style>
+</head>
+<body>
+<main>
+<h1>IRONCORE</h1>
+<p>Industrial Lead Synthesizer &middot; Handbuch Version 0.8</p>
+
+<p>IRONCORE ist ein spezialisierter Lead-Synthesizer für Schranz, Hard Techno, Industrial und aggressive Rave-Leads. MIDI rein &ndash; ein druckvoller, beweglicher Lead heraus, ohne externe Effektkette.</p>
+
+<nav><ol>
+  <li><a href="#install">Installation</a></li>
+  <li><a href="#quick">Schnellstart</a></li>
+  <li><a href="#macros">Performance-Makros</a></li>
+  <li><a href="#osc">Core Oscillator</a></li>
+  <li><a href="#filter">Iron Filter</a></li>
+  <li><a href="#damage">Damage Circuit</a></li>
+  <li><a href="#env">Hüllkurven, LFOs, Voice</a></li>
+  <li><a href="#seq">Rave Motion Sequencer</a></li>
+  <li><a href="#matrix">Mod Matrix</a></li>
+  <li><a href="#fx">FX &amp; Output</a></li>
+  <li><a href="#v07">Analog, Filter 2, Post EQ, Stereo, Pump</a></li>
+  <li><a href="#v08">Neue Engines, Pitch-Env, Character FX</a></li>
+  <li><a href="#presets">Presets</a></li>
+  <li><a href="#midi">MIDI-Referenz</a></li>
+  <li><a href="#cpu">CPU &amp; Qualität</a></li>
+  <li><a href="#faq">Fehlerbehebung</a></li>
+</ol></nav>
+
+<h2 id="install">1. Installation</h2>
+<p><b>macOS 11 oder neuer</b>, Apple Silicon oder Intel. Den Installer <code>IRONCORE-x.y.z-macOS.pkg</code> öffnen und den Schritten folgen. Installiert werden:</p>
+<table>
+<tr><th>Format</th><th>Ort</th><th>Für</th></tr>
+<tr><td>VST3</td><td><code>/Library/Audio/Plug-Ins/VST3/IRONCORE.vst3</code></td><td>Ableton Live, Bitwig, Reason, Cubase, FL Studio, Studio One</td></tr>
+<tr><td>Audio Unit</td><td><code>/Library/Audio/Plug-Ins/Components/IRONCORE.component</code></td><td>Logic Pro, GarageBand, MainStage</td></tr>
+</table>
+<p>Danach die DAW neu starten bzw. einen Plugin-Rescan ausführen. IRONCORE erscheint als Instrument unter dem Hersteller <b>Ironcore</b>.</p>
+<div class="note">Ist der Installer nicht von Apple notarisiert, warnt macOS beim Öffnen. Dann: Rechtsklick auf die .pkg-Datei &rarr; <b>Öffnen</b> &rarr; <b>Öffnen</b> bestätigen.</div>
+
+<h2 id="quick">2. Schnellstart</h2>
+<ol>
+  <li>IRONCORE auf eine MIDI-Spur laden.</li>
+  <li>Oben rechts ein Preset wählen, z.&nbsp;B. <i>SCHRANZ Saw Burner</i> oder <i>ACID Reactor</i>.</li>
+  <li>Eine lange Note halten und das DAW-Transport starten &ndash; der Sequencer läuft im Song-Tempo und macht aus der gehaltenen Note eine Sequenz.</li>
+  <li>An <b>HEAT</b>, <b>BITE</b> und <b>MORPH</b> drehen. Fertig ist der erste eigene Sound.</li>
+</ol>
+<p>Das Fenster lässt sich an der unteren rechten Ecke von 50&nbsp;% bis 150&nbsp;% skalieren. Fährt man mit der Maus über Bedienelemente, erscheinen Hilfetexte. Doppelklick auf einen Regler setzt ihn auf den Standardwert zurück.</p>
+
+<h2 id="macros">3. Performance-Makros</h2>
+<p>Fünf Regler, die jeweils mehrere Parameter musikalisch sinnvoll gemeinsam bewegen. Sie wirken <i>zusätzlich</i> zu den Detailreglern.</p>
+<table>
+<tr><th>Makro</th><th>Wirkung</th></tr>
+<tr><td><b>HEAT</b></td><td>Eingangspegel in den Damage Circuit, Sättigung, Filter-Drive und (quadratisch) Wavefold. Von warm bis völlig zerstört.</td></tr>
+<tr><td><b>BITE</b></td><td>Resonanz, Cutoff nach oben und Clipping &ndash; die aggressive Präsenz im Mix.</td></tr>
+<tr><td><b>MORPH</b></td><td>Character-Engine: Saw-Lead &rarr; metallisches FM &rarr; kreischende Vokal-Formanten (A&ndash;E&ndash;I&ndash;O).</td></tr>
+<tr><td><b>MOVEMENT</b></td><td>Skaliert die Tiefe von Sequencer und LFOs. Auf 0 fast statisch, auf 1 maximale Bewegung.</td></tr>
+<tr><td><b>DENSITY</b></td><td>Unison (1&ndash;5 Stimmen), Verstimmung, Stereobreite und etwas mehr Sub.</td></tr>
+</table>
+
+<h2 id="osc">4. Core Oscillator</h2>
+<table>
+<tr><th>Regler</th><th>Funktion</th></tr>
+<tr><td>TYPE</td><td><b>Classic</b>: Saw &rarr; Square &rarr; schmaler Puls. <b>WT Iron / WT Metal / WT Vocal / WT Digital</b>: band-limitierte Wavetables mit je vier Morph-Stufen.</td></tr>
+<tr><td>OSC1 / OSC2 SHAPE</td><td>Position in der Wellenform bzw. Wavetable.</td></tr>
+<tr><td>SEMI / FINE</td><td>Stimmung von Oszillator 2 (±24 Halbtöne, ±100 Cent). Klassisch: +7 oder +12.</td></tr>
+<tr><td>OSC2</td><td>Lautstärke von Oszillator 2.</td></tr>
+<tr><td>FM</td><td>Stärke der Phasenmodulation (metallische Obertöne). Das Frequenzverhältnis folgt SEMI/FINE.</td></tr>
+<tr><td>RING</td><td>Ringmodulation Osc1 × Osc2 &ndash; glockige, unharmonische Anteile.</td></tr>
+<tr><td>SUB / NOISE</td><td>Rechteck eine Oktave tiefer / Rauschen.</td></tr>
+<tr><td>SYNC</td><td>Hard Sync: Osc2 wird von Osc1 neu gestartet. Mit SEMI hochgezogen entsteht der typische Sync-Schrei.</td></tr>
+</table>
+
+<h2 id="filter">5. Iron Filter</h2>
+<table>
+<tr><th>Modus</th><th>Charakter</th></tr>
+<tr><td><b>LP24 Ladder</b></td><td>Nichtlineares 4-Pol-Transistor-Ladder. Hohe Resonanz frisst Bass und schmatzt (Acid), schwingt nahe Maximum selbst.</td></tr>
+<tr><td>LP12</td><td>Weicherer 2-Pol-Tiefpass.</td></tr>
+<tr><td>BP Scream</td><td>Bandpass mit kreischender Resonanz &ndash; ideal für Sync- und Rave-Leads.</td></tr>
+<tr><td>HP</td><td>Hochpass für dünne, schneidende Sounds.</td></tr>
+</table>
+<p><b>CUTOFF, RESO, DRIVE</b> (Sättigung vor dem Filter), <b>ENV AMT</b> (bipolare Filterhüllkurve), <b>KEYTRK</b> (Cutoff folgt der Tonhöhe). Die Filterkurve oben rechts zeigt den aktuell hörbaren Cutoff inkl. aller Modulationen.</p>
+
+<h2 id="damage">6. Damage Circuit</h2>
+<p>Mehrstufige Verzerrung nach dem Filter:</p>
+<table>
+<tr><td><b>SATURATE</b></td><td>Asymmetrische Röhren-/Transistor-Sättigung (erzeugt geradzahlige Obertöne).</td></tr>
+<tr><td><b>FOLD</b></td><td>Wavefolder &ndash; faltet die Welle zurück, sehr obertonreich.</td></tr>
+<tr><td><b>CLIP</b></td><td>Hartes Clipping für brutale Kanten.</td></tr>
+<tr><td><b>CRUSH</b></td><td>Bit- und Samplerate-Reduktion.</td></tr>
+<tr><td><b>ORDER</b></td><td>Reihenfolge der Stufen. Die Reihenfolge verändert den Klang deutlich &ndash; z.&nbsp;B. CLIP&gt;FOLD&gt;SAT für harte, dichte Leads.</td></tr>
+</table>
+<p>Ein DC-Filter und ein weicher Begrenzer halten den Pegel auch bei extremen Einstellungen kontrollierbar.</p>
+
+<h2 id="env">7. Hüllkurven, LFOs, Voice</h2>
+<p><b>A D S R</b>: Lautstärkehüllkurve. <b>F-A F-D F-S F-R</b>: Filterhüllkurve. Für Stabs: Decay kurz, Sustain niedrig.</p>
+<p><b>LFO1</b> moduliert den Cutoff, <b>LFO2</b> den Character (MORPH). Beide laufen synchron zum DAW-Tempo (1/1 bis 1/16, triolisch, punktiert).</p>
+<p><b>VOICE</b>: <i>Mono</i> (Legato mit Glide, letzte Note hat Vorrang) oder <i>Poly</i> (8 Stimmen). <b>GLIDE</b> bestimmt die Portamento-Zeit.</p>
+
+<h2 id="seq">8. Rave Motion Sequencer</h2>
+<p>Der Sequencer verändert pro Step nicht nur den Filter, sondern auch die Klangidentität &ndash; eine einzige gehaltene Note wird so zur lebendigen Sequenz. Er läuft synchron zur DAW; bei gestopptem Transport startet er mit der ersten gespielten Note.</p>
+<table>
+<tr><th>Spur</th><th>Wirkung</th></tr>
+<tr><td>FILTER</td><td>Cutoff-Versatz pro Step (Mitte = neutral).</td></tr>
+<tr><td>FM</td><td>FM-Stärke pro Step.</td></tr>
+<tr><td>CHARACTER</td><td>Versatz des MORPH-Werts pro Step.</td></tr>
+<tr><td>PITCH</td><td>Tonhöhe ±12 Halbtöne pro Step (Zahl im Feld).</td></tr>
+<tr><td>GATE</td><td>Länge des Steps; ganz unten = stumm. Für gehackte Schranz-Patterns.</td></tr>
+<tr><td>ACCENT</td><td>Akzent: lauter, mehr Resonanz, Cutoff und FM (Stärke über ACCENT-Regler).</td></tr>
+<tr><td>SLIDE</td><td>Gleitet in die Tonhöhe dieses Steps (Acid-Slide).</td></tr>
+</table>
+<h3>Bedienung</h3>
+<ul>
+  <li><b>Ziehen</b> setzt Werte, auch über mehrere Steps hinweg.</li>
+  <li><b>Doppelklick</b> oder <kbd>Alt</kbd>-Klick setzt einen Step zurück.</li>
+  <li><b>Rechtsklick</b> auf einen Step setzt die <b>Länge dieser Spur</b>. Unterschiedliche Längen (z.&nbsp;B. Filter 12, FM 7) ergeben Polyrhythmen. Erneuter Rechtsklick auf denselben Step setzt zurück.</li>
+</ul>
+<h3>Regler</h3>
+<table>
+<tr><td>SEQ ON / RETRIG</td><td>Sequencer an/aus. RETRIG startet die Hüllkurven bei jedem Step neu (pumpende Stabs).</td></tr>
+<tr><td>RATE</td><td>1/8, 1/16, 1/32 oder 1/16-Triolen.</td></tr>
+<tr><td>LENGTH</td><td>Gesamtlänge 1&ndash;16 Steps (begrenzt auch die Spurlängen).</td></tr>
+<tr><td>SWING</td><td>Verschiebt jeden zweiten Step.</td></tr>
+<tr><td>DEPTH</td><td>Gesamttiefe der Modulation (wird von MOVEMENT skaliert).</td></tr>
+<tr><td>MUTATE</td><td>Verändert Filter-, FM-, Character- und Accent-Werte kontrolliert und wiederholbar. Pitch, Gate und Slide bleiben unberührt.</td></tr>
+<tr><td>EVOLVE</td><td>Alle 1/2/4/8 Takte entsteht eine neue, aber reproduzierbare Mutations-Variante.</td></tr>
+</table>
+<h3>Pattern-Speicher</h3>
+<p>Acht Patterns pro Sound. Die Tasten <b>1&ndash;8</b> schalten sofort um. <b>COPY / PASTE / CLEAR</b> wirken auf das aktive Pattern. Live und im Arrangement schalten die <b>MIDI-Noten C-2 bis G-2</b> (Notennummern 0&ndash;7) die Patterns um &ndash; diese Noten erzeugen keinen Ton. Alle Patterns werden im Projekt und in eigenen Presets gespeichert.</p>
+
+<h2 id="matrix">9. Mod Matrix</h2>
+<p>Vier Slots, je Quelle &rarr; Ziel mit bipolarer Stärke.</p>
+<table>
+<tr><th>Quellen</th><td>LFO 1, LFO 2, Filter Env, Velocity, Mod Wheel, Aftertouch, Seq Filter (Filterspur), Accent, Step Random (neuer Zufallswert pro Step)</td></tr>
+<tr><th>Ziele</th><td>Cutoff (±4 Oktaven), Resonance, Pitch (±12 HT), Character, FM, Drive, Fold, Osc Shape, Osc2 Pitch (±1 Oktave), Pan, Amp</td></tr>
+</table>
+<p>Beispiele: <i>Mod Wheel &rarr; Drive</i> für Live-Steigerungen, <i>Velocity &rarr; Cutoff</i> für dynamische Acid-Lines, <i>Step Random &rarr; Osc Shape</i> für wechselnde Klangfarben.</p>
+
+<h2 id="fx">10. FX &amp; Output</h2>
+<table>
+<tr><td>TIME / DELAY / DLY FB</td><td>Tempo-synchrones Ping-Pong-Delay mit gesättigtem Feedback.</td></tr>
+<tr><td>REVERB / SIZE / DAMP / PRE-DLY</td><td>IronVerb: dunkles 8-Kanal-FDN-Reverb. Ein Hochpass am Eingang hält Kick und Bass trocken. DAMP macht den Nachhall dunkler, PRE-DLY trennt ihn vom Direktsignal.</td></tr>
+<tr><td>DRY/FX</td><td>Anteil der Effekte am Gesamtsignal.</td></tr>
+<tr><td>OVERS</td><td>Oversampling: <i>2x Eco</i> (Standard) oder <i>4x High</i> für sauberere Höhen bei viel HEAT/FOLD. Umschalten beendet klingende Noten kurz.</td></tr>
+<tr><td>OUTPUT</td><td>Ausgangspegel. Ein weicher Begrenzer verhindert Übersteuerung.</td></tr>
+</table>
+
+<h2 id="v07">10b. Analog, Filter 2, Post EQ, Stereo, Pump</h2>
+<table>
+<tr><th>Bereich</th><th>Regler</th><th>Funktion</th></tr>
+<tr><td>ANALOG / UNISON</td><td>DRIFT</td><td>Langsames, zufälliges Schwanken von Tonhöhe (pro Unison-Stimme) und Cutoff &ndash; lebendiger, breiter, „analoger“.</td></tr>
+<tr><td></td><td>FM FDBK</td><td>Rückkopplung des FM-Modulators auf sich selbst: von Sinus über Säge bis Rauschen. Härtere, metallische Industrial-Klänge.</td></tr>
+<tr><td></td><td>UNISON</td><td><i>Classic</i>: 1&ndash;5 Stimmen über DENSITY. <i>Supersaw</i>: immer 7 Stimmen mit ungleichmäßiger Verstimmung und dominanter Mittelstimme; DENSITY regelt die Verstimmung.</td></tr>
+<tr><td>DAMAGE CIRCUIT</td><td>TYPE</td><td>Charakter der Sättigungsstufe: <i>Tube</i> (warm, asymmetrisch), <i>Fuzz</i> (exponentiell, kratzig), <i>Rectify</i> (Gleichrichter, Oktav-Grit), <i>Diode</i> (harte asymmetrische Begrenzung).</td></tr>
+<tr><td>FILTER 2 / DRIVE</td><td>MODE / ROUTE</td><td>Zweites Filter (LP, BP, HP, Notch), <i>Serial</i> hinter dem Iron Filter oder <i>Parallel</i> dazu. Parallel + BP ergibt Doppel-Formanten.</td></tr>
+<tr><td></td><td>CUTOFF 2 / RESO 2</td><td>Frequenz und Resonanz von Filter 2.</td></tr>
+<tr><td></td><td>DRIVE</td><td><i>Pre Filter</i>: Filter wird übersteuert (klassisch). <i>Post Filter</i>: Verzerrung hinter dem Filter &ndash; die Resonanz wird selbst verzerrt (sehr acid).</td></tr>
+<tr><td>POST EQ</td><td>LOW CUT</td><td>Hochpass 20&ndash;600 Hz: hält den Lead aus dem Bereich von Kick und Bass.</td></tr>
+<tr><td></td><td>MID</td><td>Mitten-Boost/-Cut bei 1,2 kHz (−6 bis +12 dB) für Durchsetzungskraft.</td></tr>
+<tr><td></td><td>TILT</td><td>Kippt das Spektrum: links dunkler, rechts heller.</td></tr>
+<tr><td>STEREO / PUMP</td><td>WIDTH</td><td>Breite durch ein moduliertes, nur im Seitensignal liegendes Delay &ndash; in Mono verschwindet es spurlos, nichts geht verloren.</td></tr>
+<tr><td></td><td>PUMP / RATE</td><td>Sidechain-artiges Ducking im Tempo (1/4, 1/2, 1/8) auf das gesamte Signal inkl. Effekte &ndash; ohne externen Kompressor.</td></tr>
+</table>
+
+<h2 id="v08">10c. Neue Engines, Pitch-Hüllkurve, Character FX</h2>
+<h3>Sauberer Signalweg</h3>
+<p>Steht HEAT auf 0 und sind DRIVE, SATURATE, FOLD, CLIP und CRUSH auf 0, läuft das Signal komplett unverzerrt durch &ndash; erst dann hört man die Unterschiede zwischen Saw, FM, Formant, Wavetables und den neuen Engines wirklich. Verzerrung ist jetzt eine bewusste Entscheidung, kein Dauerzustand.</p>
+<h3>Oszillator-Typ pro Oszillator</h3>
+<p>TYPE 1 und TYPE 2 sind unabhängig wählbar (z.&nbsp;B. Osc 1 Resonator + Osc 2 Wavetable). Neu:</p>
+<table>
+<tr><td><b>Phase Dist</b></td><td>Casio-CZ-artige Phasenverzerrung: SHAPE biegt einen Sinus von weich zu sägend-kratzig.</td></tr>
+<tr><td><b>Resonator</b></td><td>Karplus-Strong-Saite/Rohr: wird bei jeder Note angezupft, SHAPE = Helligkeit. Leicht „gestrichen“, damit gehaltene Noten weiterklingen. Ideal für Plucks, Stahl, Glocken.</td></tr>
+<tr><td><b>Noise</b></td><td>Rauschen, das mit SHAPE immer tonaler wird (Bandpass auf der Notenfrequenz). Für perkussive und rauschige Leads.</td></tr>
+</table>
+<h3>Pitch-Hüllkurve (ANALOG / PITCH ENV)</h3>
+<p><b>PITCH ENV</b> (±48 Halbtöne) und <b>P-DECAY</b>: jede Note startet um diesen Wert versetzt und fällt exponentiell auf die Grundtonhöhe. Kurz und positiv = Schranz-„Pitch-Impact“, Kick- oder Tom-artig; lang = Laser/Zap. Mit RETRIG pro Sequencer-Step neu.</p>
+<h3>Hüllkurve 3 und LFOs</h3>
+<p><b>E3-A/D/S/R</b>: frei zuweisbare dritte Hüllkurve (Quelle „Env 3“ in der Mod Matrix). Die LFOs haben jetzt die Formen <i>Sine, Triangle, Saw, Square, S&amp;H</i> und die Rate <i>Free Hz</i> (LFO HZ-Regler, 0,05&ndash;30 Hz) zusätzlich zu den Tempo-Werten.</p>
+<h3>Mod Matrix: 8 Slots</h3>
+<p>Neue Quellen: <i>Env 3, Keytrack</i>. Neue Ziele: <i>Cutoff 2, Drift, FM Fdbk, Saturation, Detune, Sub, Noise, Osc2 Level, Pitch Env</i>.</p>
+<h3>Character FX</h3>
+<table>
+<tr><th>Typ</th><th>PARAM 1</th><th>PARAM 2</th><th>Klang</th></tr>
+<tr><td>Comb</td><td>TUNE</td><td>FEEDBACK (Mitte = 0, links negativ)</td><td>Metallische Resonanz, Flanger, Röhren</td></tr>
+<tr><td>Phaser</td><td>RATE</td><td>RESO</td><td>Klassisches 6-Stufen-Phasing</td></tr>
+<tr><td>Freq Shift</td><td>SHIFT (Mitte = 0 Hz, ±1500 Hz)</td><td>FEEDBACK</td><td>Verschiebt alle Frequenzen um denselben Betrag &ndash; unharmonisch, sehr industriell; mit Feedback Spiralen</td></tr>
+<tr><td>Stutter</td><td>LENGTH (1/32&ndash;1/4)</td><td>CHANCE</td><td>Wiederholt Slices im Tempo, teils rückwärts</td></tr>
+</table>
+<p><b>ORDER</b>: <i>Char &gt; Delay &gt; Verb</i> (Effekt vor dem Raum), <i>Delay &gt; Verb &gt; Char</i> (der ganze Mix inkl. Hall wird bearbeitet &ndash; z.&nbsp;B. frequenzverschobener Hall), <i>Char on Wet only</i> (nur das Effektsignal, das Original bleibt sauber).</p>
+
+<h2 id="presets">11. Presets</h2>
+<p>82 Factory-Presets in den Kategorien Schranz, Industrial, Acid, Rave, Hard Techno, FX, Pluck, Clean und Perc. <b>&lt;</b> / <b>&gt;</b> blättert, die Liste zeigt Factory- und eigene Presets getrennt.</p>
+<ul>
+  <li><b>SAVE</b> speichert den aktuellen Sound inkl. aller 8 Patterns mit Name und Kategorie.</li>
+  <li><b>…-Menü</b>: eigenes Preset umbenennen, löschen (Papierkorb), Preset-Ordner im Finder öffnen, Liste aktualisieren.</li>
+  <li><b>RANDOM</b> erzeugt einen zufälligen, musikalisch begrenzten Sound mit Pattern (Tonhöhen in Moll).</li>
+</ul>
+<p>Eigene Presets liegen unter <code>~/Documents/IRONCORE/Presets/&lt;Kategorie&gt;/</code> als <code>.ironpreset</code> (XML) und lassen sich einfach sichern oder weitergeben.</p>
+
+<h2 id="midi">12. MIDI-Referenz</h2>
+<table>
+<tr><th>Nachricht</th><th>Funktion</th></tr>
+<tr><td>Noten 0&ndash;7 (C-2 &ndash; G-2)</td><td>Pattern 1&ndash;8 wählen</td></tr>
+<tr><td>Noten ab 8</td><td>Spielen</td></tr>
+<tr><td>Velocity</td><td>Lautstärke (50&ndash;100 %), Quelle in der Mod Matrix</td></tr>
+<tr><td>Pitch Bend</td><td>±2 Halbtöne</td></tr>
+<tr><td>CC 1 (Mod Wheel)</td><td>Quelle in der Mod Matrix</td></tr>
+<tr><td>Channel Aftertouch</td><td>Quelle in der Mod Matrix</td></tr>
+<tr><td>All Notes Off / All Sound Off</td><td>Alle Stimmen stoppen</td></tr>
+</table>
+<p>Alle Regler und Sequencer-Steps sind als Plugin-Parameter automatisierbar.</p>
+
+<h2 id="cpu">13. CPU &amp; Qualität</h2>
+<p>Messung auf Apple M4 Pro, 48 kHz, Puffer 512, Anteil eines CPU-Kerns:</p>
+<table>
+<tr><th>Szenario</th><th>2x Eco</th><th>4x High</th></tr>
+<tr><td>Mono, 1 Note, Density 0.3</td><td>1,6 %</td><td>3,0 %</td></tr>
+<tr><td>Poly, 8 Noten, Density 0.3</td><td>7,7 %</td><td>&ndash;</td></tr>
+<tr><td>Poly, 8 Noten, Density 1.0</td><td>11,0 %</td><td>21,1 %</td></tr>
+<tr><td>Poly, 8 Noten, Density 1.0, Formant</td><td>12,4 %</td><td>23,6 %</td></tr>
+</table>
+<p>Tipp: Für Leads reicht fast immer <i>Mono</i>. <i>4x High</i> lohnt sich vor allem bei hohen Noten mit viel FOLD und CLIP. Die Latenz beträgt wenige Samples und wird der DAW gemeldet.</p>
+
+<h2 id="faq">14. Fehlerbehebung</h2>
+<h3>IRONCORE erscheint nicht in der DAW</h3>
+<p>Plugin-Rescan durchführen (Ableton: Einstellungen &rarr; Plug-Ins &rarr; Neu scannen). In Ableton muss „VST3-Plug-In-Systemordner verwenden“ aktiviert sein.</p>
+<h3>macOS blockiert das Plugin</h3>
+<p>Bei nicht notarisierten Testversionen im Terminal ausführen:<br>
+<code>xattr -dr com.apple.quarantine /Library/Audio/Plug-Ins/VST3/IRONCORE.vst3</code></p>
+<h3>Der Sequencer läuft nicht</h3>
+<p>SEQ ON prüfen und DEPTH bzw. MOVEMENT aufdrehen. Bei gestopptem Transport startet der Sequencer mit der ersten Note.</p>
+<h3>Lauter, langgezogener Krach aus den Effekten</h3>
+<p>Endgültig behoben in Version 0.8: Beim Lesen aus Verzögerungspuffern konnte durch Rundung ein Wert hinter dem Pufferende gelesen werden (Reverb, Stereo-Breite, Comb, Resonator). Dieser Datenmüll wurde im Reverb zu einem langen, verzerrten, auf- und abschwellenden Ton. Zuvor (0.5.1) wurde bereits ein Überlauf bei großen Audioblöcken behoben. Falls je wieder etwas hängt: <b>PANIC</b> oben links stoppt alle Stimmen und löscht Delay/Reverb. Die Anzeige <b>SAFETY</b> zeigt, ob eine Schutzschaltung eingegriffen hat.</p>
+<h3>Es ist zu laut / verzerrt zu stark</h3>
+<p>HEAT zurücknehmen, OUTPUT senken. Der Ausgangsbegrenzer verhindert Clipping, kann aber bei sehr hohen Pegeln hörbar komprimieren.</p>
+</main>
+</body>
+</html>

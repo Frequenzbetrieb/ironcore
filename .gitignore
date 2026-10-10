@@ -1,0 +1,15 @@
+# Build output
+build/
+build-*/
+dist/
+*.zip
+
+# OS / IDE
+.DS_Store
+.vscode/
+.idea/
+*.user
+
+# Local test copies / logs
+/IRONCORE.vst3*/
+*.log

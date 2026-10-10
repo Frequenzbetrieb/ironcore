@@ -1,0 +1,92 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  windows:
+    name: Windows (VST3 + Standalone)
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Configure
+        run: cmake -S . -B build -G "Visual Studio 17 2022" -A x64 -DIRONCORE_COPY_AFTER_BUILD=OFF
+
+      - name: Build
+        run: cmake --build build --config Release --target IRONCORE_VST3 IRONCORE_Standalone --parallel
+
+      - name: Validate with pluginval
+        shell: pwsh
+        run: |
+          Invoke-WebRequest https://github.com/Tracktion/pluginval/releases/latest/download/pluginval_Windows.zip -OutFile pluginval.zip
+          Expand-Archive pluginval.zip -DestinationPath pluginval
+          ./pluginval/pluginval.exe --strictness-level 5 --validate-in-process --timeout-ms 600000 "build/IRONCORE_artefacts/Release/VST3/IRONCORE.vst3"
+          if ($LASTEXITCODE -ne 0) { exit 1 }
+
+      - name: Package
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path package | Out-Null
+          Copy-Item -Recurse build/IRONCORE_artefacts/Release/VST3/IRONCORE.vst3 package/
+          Copy-Item build/IRONCORE_artefacts/Release/Standalone/IRONCORE.exe package/
+          Copy-Item docs/IRONCORE-Handbuch.html, LICENSE, README.md package/
+          Compress-Archive -Path package/* -DestinationPath IRONCORE-Windows-x64.zip
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: IRONCORE-Windows-x64
+          path: IRONCORE-Windows-x64.zip
+
+  macos:
+    name: macOS (VST3 + AU + Standalone, universal)
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Configure
+        run: cmake -S . -B build -G Xcode -DIRONCORE_COPY_AFTER_BUILD=OFF
+
+      - name: Build
+        run: cmake --build build --config Release --target IRONCORE_VST3 IRONCORE_AU IRONCORE_Standalone -- -quiet
+
+      - name: Package
+        run: |
+          mkdir package
+          cp -R build/IRONCORE_artefacts/Release/VST3/IRONCORE.vst3 package/
+          cp -R build/IRONCORE_artefacts/Release/AU/IRONCORE.component package/
+          cp -R build/IRONCORE_artefacts/Release/Standalone/IRONCORE.app package/
+          cp docs/IRONCORE-Handbuch.html LICENSE README.md package/
+          cd package && zip -qry ../IRONCORE-macOS-universal.zip .
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: IRONCORE-macOS-universal
+          path: IRONCORE-macOS-universal.zip
+
+  release:
+    name: GitHub Release
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: [windows, macos]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          merge-multiple: true
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            IRONCORE-Windows-x64.zip
+            IRONCORE-macOS-universal.zip
+          generate_release_notes: true
