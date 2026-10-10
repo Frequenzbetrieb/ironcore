@@ -32,7 +32,7 @@ Das vollständige Handbuch (Deutsch) steht in [`docs/IRONCORE-Handbuch.html`](do
 
 ## Download
 
-Fertige Builds für **Windows (x64)** und **macOS (Universal: Apple Silicon + Intel)** gibt es unter [**Releases**](../../releases). Jeder Commit wird zusätzlich automatisch gebaut; die Dateien liegen dann unter [Actions](../../actions) → letzter Lauf → *Artifacts*.
+**Direkt-Download der neuesten Version:** [Windows (x64)](https://github.com/Frequenzbetrieb/ironcore/releases/latest/download/IRONCORE-Windows-x64.zip) · [macOS (Universal)](https://github.com/Frequenzbetrieb/ironcore/releases/latest/download/IRONCORE-macOS-universal.zip) · [alle Versionen](../../releases). Jeder Commit wird zusätzlich automatisch gebaut; die Dateien liegen dann unter [Actions](../../actions) → letzter Lauf → *Artifacts*.
 
 | System | Datei | Installation |
 |---|---|---|

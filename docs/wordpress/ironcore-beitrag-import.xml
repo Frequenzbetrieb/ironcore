@@ -98,11 +98,15 @@
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://github.com/Frequenzbetrieb/ironcore/releases">IRONCORE herunterladen</a></div>
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://github.com/Frequenzbetrieb/ironcore/releases/latest/download/IRONCORE-Windows-x64.zip">Download für Windows</a></div>
 <!-- /wp:button --><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://github.com/Frequenzbetrieb/ironcore">Quellcode auf GitHub</a></div>
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://github.com/Frequenzbetrieb/ironcore/releases/latest/download/IRONCORE-macOS-universal.zip">Download für macOS</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons -->
+
+<!-- wp:paragraph -->
+<p><a href="https://github.com/Frequenzbetrieb/ironcore/releases">Alle Versionen &amp; Änderungen</a> · <a href="https://github.com/Frequenzbetrieb/ironcore">Quellcode auf GitHub</a> · Die Download-Links liefern immer automatisch die neueste Version.</p>
+<!-- /wp:paragraph -->
 
 <!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading">Systemvoraussetzungen</h3>
@@ -131,8 +135,8 @@
 <!-- /wp:paragraph -->]]></content:encoded>
     <excerpt:encoded><![CDATA[IRONCORE ist da: ein kostenloser Open-Source-Synthesizer für Schranz, Hard Techno und Industrial – mit Rave Motion Sequencer, 82 Presets und Versionen für Windows und macOS.]]></excerpt:encoded>
     <wp:post_id>9101</wp:post_id>
-    <wp:post_date><![CDATA[2026-10-10 17:07:42]]></wp:post_date>
-    <wp:post_date_gmt><![CDATA[2026-10-10 17:07:42]]></wp:post_date_gmt>
+    <wp:post_date><![CDATA[2026-10-10 17:10:04]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-10-10 17:10:04]]></wp:post_date_gmt>
     <wp:comment_status><![CDATA[open]]></wp:comment_status>
     <wp:post_name><![CDATA[ironcore-synthesizer]]></wp:post_name>
     <wp:status><![CDATA[draft]]></wp:status>
@@ -149,8 +153,8 @@
     <content:encoded><![CDATA[]]></content:encoded>
     <excerpt:encoded><![CDATA[]]></excerpt:encoded>
     <wp:post_id>9102</wp:post_id>
-    <wp:post_date><![CDATA[2026-10-10 17:07:42]]></wp:post_date>
-    <wp:post_date_gmt><![CDATA[2026-10-10 17:07:42]]></wp:post_date_gmt>
+    <wp:post_date><![CDATA[2026-10-10 17:10:04]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-10-10 17:10:04]]></wp:post_date_gmt>
     <wp:post_name><![CDATA[ironcore-beitragsbild]]></wp:post_name>
     <wp:status><![CDATA[inherit]]></wp:status>
     <wp:post_parent>9101</wp:post_parent>
@@ -164,8 +168,8 @@
     <content:encoded><![CDATA[]]></content:encoded>
     <excerpt:encoded><![CDATA[]]></excerpt:encoded>
     <wp:post_id>9103</wp:post_id>
-    <wp:post_date><![CDATA[2026-10-10 17:07:42]]></wp:post_date>
-    <wp:post_date_gmt><![CDATA[2026-10-10 17:07:42]]></wp:post_date_gmt>
+    <wp:post_date><![CDATA[2026-10-10 17:10:04]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-10-10 17:10:04]]></wp:post_date_gmt>
     <wp:post_name><![CDATA[ironcore-screenshot]]></wp:post_name>
     <wp:status><![CDATA[inherit]]></wp:status>
     <wp:post_parent>9101</wp:post_parent>
@@ -179,8 +183,8 @@
     <content:encoded><![CDATA[]]></content:encoded>
     <excerpt:encoded><![CDATA[]]></excerpt:encoded>
     <wp:post_id>9104</wp:post_id>
-    <wp:post_date><![CDATA[2026-10-10 17:07:42]]></wp:post_date>
-    <wp:post_date_gmt><![CDATA[2026-10-10 17:07:42]]></wp:post_date_gmt>
+    <wp:post_date><![CDATA[2026-10-10 17:10:04]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-10-10 17:10:04]]></wp:post_date_gmt>
     <wp:post_name><![CDATA[ironcore-klangarchitektur]]></wp:post_name>
     <wp:status><![CDATA[inherit]]></wp:status>
     <wp:post_parent>9101</wp:post_parent>
@@ -194,8 +198,8 @@
     <content:encoded><![CDATA[]]></content:encoded>
     <excerpt:encoded><![CDATA[]]></excerpt:encoded>
     <wp:post_id>9105</wp:post_id>
-    <wp:post_date><![CDATA[2026-10-10 17:07:42]]></wp:post_date>
-    <wp:post_date_gmt><![CDATA[2026-10-10 17:07:42]]></wp:post_date_gmt>
+    <wp:post_date><![CDATA[2026-10-10 17:10:04]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-10-10 17:10:04]]></wp:post_date_gmt>
     <wp:post_name><![CDATA[ironcore-download]]></wp:post_name>
     <wp:status><![CDATA[inherit]]></wp:status>
     <wp:post_parent>9101</wp:post_parent>
@@ -209,8 +213,8 @@
     <content:encoded><![CDATA[]]></content:encoded>
     <excerpt:encoded><![CDATA[]]></excerpt:encoded>
     <wp:post_id>9106</wp:post_id>
-    <wp:post_date><![CDATA[2026-10-10 17:07:42]]></wp:post_date>
-    <wp:post_date_gmt><![CDATA[2026-10-10 17:07:42]]></wp:post_date_gmt>
+    <wp:post_date><![CDATA[2026-10-10 17:10:04]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-10-10 17:10:04]]></wp:post_date_gmt>
     <wp:post_name><![CDATA[ironcore-social-1080]]></wp:post_name>
     <wp:status><![CDATA[inherit]]></wp:status>
     <wp:post_parent>9101</wp:post_parent>
