@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:wp="http://wordpress.org/export/1.2/">
+<channel>
+  <title>Frequenzbetrieb</title>
+  <link>https://www.frequenzbetrieb.de</link>
+  <language>de-DE</language>
+  <wp:wxr_version>1.2</wp:wxr_version>
+  <wp:base_site_url>https://www.frequenzbetrieb.de</wp:base_site_url>
+  <wp:base_blog_url>https://www.frequenzbetrieb.de</wp:base_blog_url>
+  <wp:author><wp:author_login><![CDATA[admin]]></wp:author_login><wp:author_display_name><![CDATA[Frequenzbetrieb]]></wp:author_display_name></wp:author>
+  <wp:category><wp:term_id>9201</wp:term_id><wp:category_nicename><![CDATA[news]]></wp:category_nicename><wp:category_parent><![CDATA[]]></wp:category_parent><wp:cat_name><![CDATA[News]]></wp:cat_name></wp:category>
+  <wp:tag><wp:term_id>9202</wp:term_id><wp:tag_slug><![CDATA[ironcore]]></wp:tag_slug><wp:tag_name><![CDATA[IRONCORE]]></wp:tag_name></wp:tag>
+  <item>
+    <title>IRONCORE: Unser kostenloser Synthesizer für Schranz &amp; Hard Techno ist da</title>
+    <link>https://www.frequenzbetrieb.de/ironcore-synthesizer/</link>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <content:encoded><![CDATA[<!-- wp:paragraph -->
+<p><strong>Schranz, Hard Techno, Industrial – und das alles aus einem einzigen Plugin.</strong> Mit <strong>IRONCORE</strong> veröffentlicht Frequenzbetrieb n.e.V. seinen ersten eigenen Software-Synthesizer: einen spezialisierten Lead-Synth für aggressive, bewegte Techno-Sounds. Kostenlos, quelloffen und für Windows und macOS.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://raw.githubusercontent.com/Frequenzbetrieb/ironcore/main/docs/wordpress/ironcore-beitragsbild.jpg" alt="IRONCORE – Industrial Lead Synthesizer von Frequenzbetrieb"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Was ist IRONCORE?</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Die meisten Synthesizer können alles ein bisschen. IRONCORE kann eine Sache besonders gut: aus MIDI-Noten druckvolle, sägende und kreischende Leads machen – von Rave-Hoovern über metallische Industrial-Stabs bis zu schmatzenden Acid-Linien. Ohne fünf externe Plugins, ohne lange Einarbeitung.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Im Zentrum stehen fünf Performance-Makros: <strong>HEAT</strong> (Sättigung und Obertöne), <strong>BITE</strong> (Resonanz und Schärfe), <strong>MORPH</strong> (von Saw über FM-Metall bis zu Vokal-Formanten), <strong>MOVEMENT</strong> (wie stark sich alles bewegt) und <strong>DENSITY</strong> (Unison, Breite, Fülle). Ein Dreh – und der Sound geht in eine ganz andere Richtung.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://raw.githubusercontent.com/Frequenzbetrieb/ironcore/main/docs/wordpress/ironcore-screenshot.jpg" alt="Die Oberfläche von IRONCORE"/><figcaption class="wp-element-caption">Die komplette Oberfläche: Makros, Oszillatoren, Filter, Damage Circuit, Effekte, Sequencer und Mod Matrix.</figcaption></figure>
+<!-- /wp:image -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">So klingt IRONCORE</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Das Signal läuft durch fünf Stufen, die sich gegenseitig verstärken. Jede lässt sich so weit aufdrehen, wie es der Track verlangt – oder ganz abschalten, wenn es sauber klingen soll.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://raw.githubusercontent.com/Frequenzbetrieb/ironcore/main/docs/wordpress/ironcore-klangarchitektur.jpg" alt="Klangarchitektur von IRONCORE: Core Oscillator, Iron Filter, Damage, Character FX, Raum"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li><strong>Core Oscillator:</strong> Wavetables, FM mit Feedback, Phase Distortion im Stil des Casio CZ, ein gezupfter Resonator, tonales Rauschen und Supersaw mit bis zu sieben Stimmen</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li><strong>Iron Filter:</strong> ein nichtlineares 4-Pol-Ladder-Filter, das bei hoher Resonanz den Bass frisst und schmatzt – dazu ein zweites Filter, seriell oder parallel</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li><strong>Damage Circuit:</strong> sechs Verzerrungs-Charaktere von Röhre über Fuzz bis Gleichrichter, Wavefolder, Clipping und Bitcrusher</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li><strong>Character FX:</strong> Comb-Filter, Phaser, Frequency Shifter und Tempo-Stutter</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li><strong>Raum:</strong> Ping-Pong-Delay, ein dunkles Techno-Reverb und ein Sidechain-artiger Pump im Tempo</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Der Rave Motion Sequencer</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Das Herzstück für Schranz: Eine einzige gehaltene Note wird zur Sequenz. Pro Step verändert der Sequencer nicht nur den Filter, sondern auch FM, Klangcharakter, Tonhöhe, Gate, Akzent und Slide. Mit unterschiedlichen Spurlängen entstehen Polyrhythmen, die sich langsam verschieben. Acht Patterns lassen sich live per MIDI-Note umschalten – direkt aus dem Clip heraus.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">82 Presets zum Loslegen</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Von <em>SCHRANZ Pitch Impact</em> über <em>ACID Warehouse 303</em> und <em>INDUSTRIAL Comb Grinder</em> bis zu <em>RAVE 92 Hoover</em> – alle Presets sind in der Lautstärke angeglichen, damit du fair vergleichen kannst. Eigene Sounds speicherst du mit einem Klick, und der RANDOM-Knopf liefert auf Wunsch musikalisch sinnvolle Zufallssounds.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Open Source – von der Szene für die Szene</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>IRONCORE ist <strong>kostenlos und quelloffen</strong> unter der GNU AGPLv3. Jede und jeder darf das Plugin nutzen, untersuchen, verändern und weitergeben. Musik, die du damit machst, gehört selbstverständlich dir.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Der komplette Quellcode liegt auf <a href="https://github.com/Frequenzbetrieb/ironcore">GitHub</a>. Dort wird bei jeder Änderung automatisch eine Windows- und eine macOS-Version gebaut und getestet. Wir freuen uns über Fehlermeldungen, Preset-Ideen, Tests in verschiedenen DAWs und natürlich über Code-Beiträge.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://raw.githubusercontent.com/Frequenzbetrieb/ironcore/main/docs/wordpress/ironcore-download.jpg" alt="IRONCORE kostenlos für Windows und macOS herunterladen"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://github.com/Frequenzbetrieb/ironcore/releases">IRONCORE herunterladen</a></div>
+<!-- /wp:button --><!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://github.com/Frequenzbetrieb/ironcore">Quellcode auf GitHub</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Systemvoraussetzungen</h3>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li><strong>Windows:</strong> 64 Bit, VST3-fähige DAW (z. B. Ableton Live, Bitwig, Reason, Cubase, FL Studio, Studio One) oder als Standalone-Programm</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li><strong>macOS:</strong> ab macOS 11, Apple Silicon und Intel; VST3, Audio Unit (Logic, GarageBand) oder Standalone</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li>Ein deutsches Handbuch liegt jedem Download bei</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p><em>Hinweis: Die Builds sind derzeit noch nicht signiert. Windows zeigt deshalb eventuell einen SmartScreen-Hinweis („Weitere Informationen → Trotzdem ausführen“), macOS muss das Plugin einmalig freigeben. Die Anleitung steht auf der Download-Seite.</em></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Mitmachen</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Du produzierst Techno und willst IRONCORE besser machen? Probier es aus, bau Presets und sag uns, was fehlt – über GitHub oder direkt an den Verein. Wenn dir das Projekt gefällt, unterstütze unsere Arbeit gerne mit einer <a href="https://frequenzbetrieb.de/spenden/">Spende</a>.</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+    <excerpt:encoded><![CDATA[IRONCORE ist da: ein kostenloser Open-Source-Synthesizer für Schranz, Hard Techno und Industrial – mit Rave Motion Sequencer, 82 Presets und Versionen für Windows und macOS.]]></excerpt:encoded>
+    <wp:post_id>9101</wp:post_id>
+    <wp:post_date><![CDATA[2026-10-10 17:07:42]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-10-10 17:07:42]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[open]]></wp:comment_status>
+    <wp:post_name><![CDATA[ironcore-synthesizer]]></wp:post_name>
+    <wp:status><![CDATA[draft]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:post_type><![CDATA[post]]></wp:post_type>
+    <category domain="category" nicename="news"><![CDATA[News]]></category>
+    <category domain="post_tag" nicename="ironcore"><![CDATA[IRONCORE]]></category>
+    <wp:postmeta><wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key><wp:meta_value><![CDATA[9102]]></wp:meta_value></wp:postmeta>
+  </item>
+  <item>
+    <title>IRONCORE Beitragsbild</title>
+    <link>https://raw.githubusercontent.com/Frequenzbetrieb/ironcore/main/docs/wordpress/ironcore-beitragsbild.jpg</link>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <content:encoded><![CDATA[]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>9102</wp:post_id>
+    <wp:post_date><![CDATA[2026-10-10 17:07:42]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-10-10 17:07:42]]></wp:post_date_gmt>
+    <wp:post_name><![CDATA[ironcore-beitragsbild]]></wp:post_name>
+    <wp:status><![CDATA[inherit]]></wp:status>
+    <wp:post_parent>9101</wp:post_parent>
+    <wp:post_type><![CDATA[attachment]]></wp:post_type>
+    <wp:attachment_url><![CDATA[https://raw.githubusercontent.com/Frequenzbetrieb/ironcore/main/docs/wordpress/ironcore-beitragsbild.jpg]]></wp:attachment_url>
+  </item>
+  <item>
+    <title>IRONCORE Oberfläche</title>
+    <link>https://raw.githubusercontent.com/Frequenzbetrieb/ironcore/main/docs/wordpress/ironcore-screenshot.jpg</link>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <content:encoded><![CDATA[]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>9103</wp:post_id>
+    <wp:post_date><![CDATA[2026-10-10 17:07:42]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-10-10 17:07:42]]></wp:post_date_gmt>
+    <wp:post_name><![CDATA[ironcore-screenshot]]></wp:post_name>
+    <wp:status><![CDATA[inherit]]></wp:status>
+    <wp:post_parent>9101</wp:post_parent>
+    <wp:post_type><![CDATA[attachment]]></wp:post_type>
+    <wp:attachment_url><![CDATA[https://raw.githubusercontent.com/Frequenzbetrieb/ironcore/main/docs/wordpress/ironcore-screenshot.jpg]]></wp:attachment_url>
+  </item>
+  <item>
+    <title>IRONCORE Klangarchitektur</title>
+    <link>https://raw.githubusercontent.com/Frequenzbetrieb/ironcore/main/docs/wordpress/ironcore-klangarchitektur.jpg</link>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <content:encoded><![CDATA[]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>9104</wp:post_id>
+    <wp:post_date><![CDATA[2026-10-10 17:07:42]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-10-10 17:07:42]]></wp:post_date_gmt>
+    <wp:post_name><![CDATA[ironcore-klangarchitektur]]></wp:post_name>
+    <wp:status><![CDATA[inherit]]></wp:status>
+    <wp:post_parent>9101</wp:post_parent>
+    <wp:post_type><![CDATA[attachment]]></wp:post_type>
+    <wp:attachment_url><![CDATA[https://raw.githubusercontent.com/Frequenzbetrieb/ironcore/main/docs/wordpress/ironcore-klangarchitektur.jpg]]></wp:attachment_url>
+  </item>
+  <item>
+    <title>IRONCORE Download</title>
+    <link>https://raw.githubusercontent.com/Frequenzbetrieb/ironcore/main/docs/wordpress/ironcore-download.jpg</link>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <content:encoded><![CDATA[]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>9105</wp:post_id>
+    <wp:post_date><![CDATA[2026-10-10 17:07:42]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-10-10 17:07:42]]></wp:post_date_gmt>
+    <wp:post_name><![CDATA[ironcore-download]]></wp:post_name>
+    <wp:status><![CDATA[inherit]]></wp:status>
+    <wp:post_parent>9101</wp:post_parent>
+    <wp:post_type><![CDATA[attachment]]></wp:post_type>
+    <wp:attachment_url><![CDATA[https://raw.githubusercontent.com/Frequenzbetrieb/ironcore/main/docs/wordpress/ironcore-download.jpg]]></wp:attachment_url>
+  </item>
+  <item>
+    <title>IRONCORE Social Media</title>
+    <link>https://raw.githubusercontent.com/Frequenzbetrieb/ironcore/main/docs/wordpress/ironcore-social-1080.jpg</link>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <content:encoded><![CDATA[]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>9106</wp:post_id>
+    <wp:post_date><![CDATA[2026-10-10 17:07:42]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-10-10 17:07:42]]></wp:post_date_gmt>
+    <wp:post_name><![CDATA[ironcore-social-1080]]></wp:post_name>
+    <wp:status><![CDATA[inherit]]></wp:status>
+    <wp:post_parent>9101</wp:post_parent>
+    <wp:post_type><![CDATA[attachment]]></wp:post_type>
+    <wp:attachment_url><![CDATA[https://raw.githubusercontent.com/Frequenzbetrieb/ironcore/main/docs/wordpress/ironcore-social-1080.jpg]]></wp:attachment_url>
+  </item>
+</channel>
+</rss>
