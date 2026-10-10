@@ -20,7 +20,7 @@ jobs:
           submodules: recursive
 
       - name: Configure
-        run: cmake -S . -B build -G "Visual Studio 17 2022" -A x64 -DIRONCORE_COPY_AFTER_BUILD=OFF
+        run: cmake -S . -B build -A x64 -DIRONCORE_COPY_AFTER_BUILD=OFF
 
       - name: Build
         run: cmake --build build --config Release --target IRONCORE_VST3 IRONCORE_Standalone --parallel
